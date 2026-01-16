@@ -1,5 +1,5 @@
 {
-  "dart.flutterSdkPath": ".fvm/versions/3.32.0",
+  "dart.flutterSdkPath": ".fvm/versions/3.24.3",
   "dart.sdkPath": ".fvm/flutter_sdk/bin/cache/3.8.0",
   "editor.formatOnPaste": true
 }
