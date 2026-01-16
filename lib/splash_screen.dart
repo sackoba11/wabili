@@ -20,34 +20,33 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    widget.controller.value =
-        WebViewController()
-          ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..setNavigationDelegate(
-            NavigationDelegate(
-              onPageFinished: (url) {
-                isLoading.value = false;
-              },
-              onWebResourceError: (error) {
-                if (error.errorType == WebResourceErrorType.connect ||
-                    error.errorType == WebResourceErrorType.timeout ||
-                    error.errorType == WebResourceErrorType.hostLookup) {
-                  widget.isConnected.value = false;
-                  isLoading.value = false;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    customSnackbar(message: "Aucune connexion internet"),
-                  );
+    widget.controller.value = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageFinished: (url) {
+            isLoading.value = false;
+          },
+          onWebResourceError: (error) {
+            if (error.errorType == WebResourceErrorType.connect ||
+                error.errorType == WebResourceErrorType.timeout ||
+                error.errorType == WebResourceErrorType.hostLookup) {
+              widget.isConnected.value = false;
+              isLoading.value = false;
+              ScaffoldMessenger.of(context).showSnackBar(
+                customSnackbar(message: "Aucune connexion internet"),
+              );
 
-                  return;
-                }
-                isLoading.value = false;
-                ScaffoldMessenger.of(context).showSnackBar(
-                  customSnackbar(message: "Erreur: ${error.description}"),
-                );
-              },
-            ),
-          )
-          ..loadRequest(Uri.parse('https://wabili.com'));
+              return;
+            }
+            isLoading.value = false;
+            ScaffoldMessenger.of(context).showSnackBar(
+              customSnackbar(message: "Erreur: ${error.description}"),
+            );
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse('https://wabili.com'));
   }
 
   SnackBar customSnackbar({required String message}) {

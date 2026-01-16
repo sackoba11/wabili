@@ -26,9 +26,8 @@ class MyApp extends StatelessWidget {
       ),
       home: SplashScreen(controller: controller, isConnected: isConnected),
       routes: {
-        '/home':
-            (context) =>
-                HomePage(controller: controller, isConnected: isConnected),
+        '/home': (context) =>
+            HomePage(controller: controller, isConnected: isConnected),
       },
     );
   }
