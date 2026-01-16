@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
               },
             ),
           )
-          ..loadRequest(Uri.parse('https://daqauto.sastock.com/'));
+          ..loadRequest(Uri.parse('https://wabili.com'));
   }
 
   SnackBar customSnackbar({required String message}) {
@@ -85,7 +85,13 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: Image.asset('assets/splash.png', height: 150)),
+            Expanded(
+              child: Image.asset(
+                'assets/splash.png',
+                height: 100,
+                width: MediaQuery.sizeOf(context).width / 1.5,
+              ),
+            ),
 
             const SizedBox(height: 20),
             const Align(
