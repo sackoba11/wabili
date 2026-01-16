@@ -5,15 +5,15 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.5.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.8
-  webview_flutter: ^4.11.0
+  cupertino_icons: ^1.0.8  
   fluttertoast: ^8.2.12
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   flutter_test:
